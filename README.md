@@ -1,6 +1,7 @@
 # README
 
 # アプリケーション名
+買い物りすと
 
 # アプリケーション概要
   ただのメモ帳としての機能だけではなく、快適な買い物ライフを実現する。
@@ -40,13 +41,65 @@
 # 実装予定の機能
 
 # データベース設計
+[![Image from Gyazo](https://i.gyazo.com/0dc7cb70015abbb3a26b640a8b9d7718.png)](https://gyazo.com/0dc7cb70015abbb3a26b640a8b9d7718)
+
 # 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/998d16174405319d6771a279b6b5b07f.png)](https://gyazo.com/998d16174405319d6771a279b6b5b07f)
+
 # 開発環境
 # ローカルでの動作方法
 # 工夫したポイント
 # 改善点
 # 制作時間
 
+# テーブル設計
+
+## users テーブル
+
+| Column             | Type   | Options                   |
+| -------------------| ------ | ------------------------- |
+| user_name          | string | null: false               |
+| email              | string | null: false, unique: true | 
+| encrypted_password | string | null: false               |
+
+### Association
+
+- has_many :lists
+- has_many :templates
+
+## lists テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| title         | string     | null: false                    |
+| shopping_date | date       |                                |
+| place         | string     | null: false                    |
+| item          | string     | null: false                    |
+| item_number   | integer    |                                |
+| note          | text       |                                |
+| template      | references |                                |
+
+### Association
+
+- has_one  :user
+- has_one  :template
+
+## templates テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| user          | references | null: false, foreign_key: true |
+| title         | string     | null: false                    |
+| place         | string     |                                |
+| item_name     | string     | null: false                    |
+| item_number   | integer    |                                |
+| note          | text       |                                |
+
+### Association
+
+- belongs_to :user
+- has_many   :lists
 
 
 
