@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'lists/index'
-  devise_for :users
-  root to: "top#index"
+  root to: 'top#index'
+
+    devise_for :users
     resources :lists
+    delete '/logout', to: 'sessions#destroy', as: :logout
+    
 end

@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <!-- ログインしているユーザー用の表示 -->
+  <p>買い物リストを表示</p>
+  <p>カレンダーを表示</p>
+  <p>チラシを表示</p>
+<% else %>
+  <!-- ログインしていないユーザー用の表示 -->
+  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "新規登録", new_user_registration_path %>
+<% end %>
