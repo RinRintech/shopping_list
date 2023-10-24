@@ -1,8 +1,10 @@
 <% if user_signed_in? %>
   <!-- ログインしているユーザー用の表示 -->
-  <p>買い物リストを表示</p>
-  <p>カレンダーを表示</p>
-  <p>チラシを表示</p>
+  <p><%= link_to "買い物リスト", lists_path %></p>
+  <p><%= link_to "カレンダー", root_path %></p>
+  <p><%= link_to "チラシ", root_path %></p>
+  <p><%= link_to "テンプレート作成", root_path %></p>
+  <p><%= link_to "会員情報変更", edit_user_registration_path %></p>
 <% else %>
   <!-- ログインしていないユーザー用の表示 -->
   <%= link_to "ログイン", new_user_session_path %>

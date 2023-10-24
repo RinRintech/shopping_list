@@ -11,12 +11,16 @@
     買い物リスト
   </div>
   <div class="list">
-    <div class="title">
-      タイトル（<%= Time.now.strftime("%Y年%m月%d日") %>）
-    </div>
-    <div class="title">
-      タイトル（<%= Time.now.strftime("%Y年%m月%d日") %>）
-    </div>
+    <ul>
+      <% @lists.each do |list| %>
+        <li>
+          <div class="title">
+            <%= link_to "#{list.title}（#{list.shopping_date.strftime("%Y年%m月%d日")}）", list_path(list.id) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+   </div>
   </div>
 </body>
 </html>

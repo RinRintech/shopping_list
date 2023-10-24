@@ -12,6 +12,10 @@ class ListsController < ApplicationController
     redirect_to '/'
   end
 
+  def show
+    @list = List.find(params[:id])
+  end
+
   private
   def list_params
     params.require(:list).permit(:title, :shopping_date, :place, :item, :note)
