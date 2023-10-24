@@ -8,12 +8,26 @@
 .list {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  font-size: 16px;
+  gap: 30px;
+  margin: 20px;
+  font-size: 16px; 
+  text-decoration: none;
 }
 
 .title {
   border-bottom: 1px solid #000;
   padding-bottom: 5px;
+  gap: 30px;
+  margin: 20px;
+  display: table;
+  table-layout: fixed;
+  text-decoration: none;
+}
+
+.button {
+  background-color: #57e963;
+  border-radius: 20px;
+  border: 0;
+  font-size: 18px;
+  justify-content: right;
 }
