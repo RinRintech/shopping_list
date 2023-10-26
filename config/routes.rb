@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  get 'posts', to: 'posts#index'
+  root to: 'top#index'
+
+    devise_for :users
+    resources :lists
+    delete '/logout', to: 'sessions#destroy', as: :logout
+    
 end

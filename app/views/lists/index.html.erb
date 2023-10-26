@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>買い物リスト</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div class="header">
+    <p>買い物リスト</p>
+  </div>
+  
+  <div class="">
+    <p><%= link_to "New", new_list_path %></p>
+  </div>
+  <div class="list">
+    <ul>
+      <% @lists.each do |list| %>
+        <li>
+          <div class="title">
+            <%= link_to "#{list.title} #{list.shopping_date.strftime("%Y年%m月%d日")}", list_path(list.id) %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+   </div>
+  </div>
+</body>
+</html>
