@@ -3,7 +3,7 @@
     <h3>New Create</h3>
     <%= form_with(model: @lists, local: true) do |form| %>
       <%= form.text_field :title, placeholder: "Title" %>
-      <%= form.text_field :shopping_date, placeholder: "Date" %>
+      <input type="date" value="<%= Time.now.strftime('%Y-%m-%d') %>">
       <%= form.text_field :place, placeholder: "Place" %>
       <%= form.text_area :item, placeholder: "Items", rows: "10" %>
       <%= form.text_area :note, placeholder: "Memo", rows: "10" %>
